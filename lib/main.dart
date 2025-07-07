@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment_project/grid_view_builder.dart';
+import 'package:flutter_assignment_project/shadow_to_image.dart';
 
+import 'listview.dart';
+import 'listview_builder.dart';
 import 'profile_screen.dart';
 
 void main() {
@@ -17,11 +21,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple),
+            seedColor: Colors.deepPurple,
+        ),
         useMaterial3: true,
       ),
 
-      home:  const ProfileScreen(),
+      home:  const GridViewBuilder(),
     );
   }
 }

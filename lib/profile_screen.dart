@@ -11,8 +11,8 @@ class ProfileScreen extends StatelessWidget {
         centerTitle: true,
         title:const Text('Profile'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20.0),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: SizedBox(
           height: double.infinity,
           width: double.infinity,
@@ -24,17 +24,35 @@ class ProfileScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    radius: 70,
-                    backgroundImage: AssetImage('assets/images/avatar.png'),
+                  Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      const CircleAvatar(
+                        radius: 70,
+                        backgroundColor: Colors.amber,
+                        backgroundImage:  AssetImage('assets/images/avatar.png'),
+                      ),
+                      Positioned(
+                      top: 100,
+                          left: 90,
+                          child: Container(
+                              height: 40,
+                              width: 40,
+                             // color: Colors.amber,
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade200,
+                                borderRadius: BorderRadius.circular(20)
+                              ),
+                              child: const Icon(Icons.camera_alt,color: Colors.grey,)))
+                    ],
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
 
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 spacing: 20,
                 children: [
@@ -44,7 +62,7 @@ class ProfileScreen extends StatelessWidget {
                   ),),
                 ],
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 spacing: 20,
                 children: [
@@ -54,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
                   ),),
                 ],
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 spacing: 20,
                 children: [
@@ -63,8 +81,9 @@ class ProfileScreen extends StatelessWidget {
                     fontSize: 18,
                   ),),
                 ],
+
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 spacing: 20,
                 children: [
