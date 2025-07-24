@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment_project/grid_view_builder.dart';
 import 'package:flutter_assignment_project/gridview_builder_assignment.dart';
+import 'package:flutter_assignment_project/ludo_game_assignment.dart';
 import 'package:flutter_assignment_project/shadow_to_image.dart';
 
 import 'listview.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      home:   UtilityBillCard(),
+      home:   LudoGameAssignment(),
     );
   }
 }
