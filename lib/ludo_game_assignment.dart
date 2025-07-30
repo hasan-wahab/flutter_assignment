@@ -10,14 +10,18 @@ class LudoGameAssignment extends StatefulWidget {
 }
 
 class _LudoGameAssignmentState extends State<LudoGameAssignment> {
+
   var currentValue = 6;
   double angle=0;
   int index=1;
 void animation(){
   var time=const Duration(milliseconds: 10);
-    angle++;
+    angle=time.inMilliseconds.toDouble();
     index++;
-    Future.delayed(Duration(milliseconds: time.inMilliseconds)).whenComplete((){
+
+    Future.delayed(Duration(
+        milliseconds: time.inMilliseconds,
+    )).whenComplete((){
       setState(() {
         angle=0;
       });
@@ -69,7 +73,6 @@ void animation(){
                 });
                 print(currentValue);
                 animation();
-                print('My angle is $angle');
               },
             ),
           ],

@@ -8,6 +8,7 @@ import 'listview.dart';
 import 'listview_builder.dart';
 import 'listview_builder_assignment.dart';
 import 'profile_screen.dart';
+import 'switch_assignment.dart';
 import 'utility_bill_card.dart';
 
 void main() {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      home:   LudoGameAssignment(),
+      home:  SwitchAssignment(),
     );
   }
 }
