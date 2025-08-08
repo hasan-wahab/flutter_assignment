@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  final VoidCallback ? onTap;
+  final VoidCallback? onTap;
   late String? title;
-    CustomButton({super.key,required this.onTap,this.title});
+  late int? value;
+
+  late double width;
+  CustomButton({
+    super.key,
+    required this.onTap,
+    this.title = 'Button',
+    this.value = 2,
+    this.width = 350,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +23,7 @@ class CustomButton extends StatelessWidget {
         children: [
           Container(
             height: 40 - 10,
-            width: MediaQuery.sizeOf(context).width - 50,
+            width: width - 50,
             decoration: BoxDecoration(
               color: Colors.purple,
               boxShadow: const [
@@ -29,21 +38,23 @@ class CustomButton extends StatelessWidget {
           ),
           Container(
             height: 50,
-            width: MediaQuery.sizeOf(context).width,
+            width: width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              gradient: const LinearGradient(
-                  colors: [
-                Colors.blueAccent,
-                Colors.blue,
+              gradient: LinearGradient(colors: [
+                value!.isEven ? Colors.amber : Colors.blue,
+                value!.isOdd ? Colors.amber : Colors.red,
               ]),
             ),
-            child:  Center(
-                child: Text(title!,style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),)),
+            child: Center(
+                child: Text(
+              title!,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
           ),
         ],
       ),

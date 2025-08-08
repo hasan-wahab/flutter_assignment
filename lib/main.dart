@@ -1,15 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_project/grid_view_builder.dart';
-import 'package:flutter_assignment_project/gridview_builder_assignment.dart';
-import 'package:flutter_assignment_project/ludo_game_assignment.dart';
-import 'package:flutter_assignment_project/shadow_to_image.dart';
-
-import 'listview.dart';
-import 'listview_builder.dart';
-import 'listview_builder_assignment.dart';
-import 'profile_screen.dart';
-import 'switch_assignment.dart';
-import 'utility_bill_card.dart';
+import 'package:flutter_assignment_project/dmc_assignment.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,12 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple,
+          seedColor: Colors.deepPurple,
         ),
         useMaterial3: true,
       ),
-
-      home:  SwitchAssignment(),
+      home: const DmcAssignment(),
     );
   }
 }

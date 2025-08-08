@@ -46,10 +46,15 @@ void animation(){
               angle: angle,
               child: Container(
                 padding: const EdgeInsets.all(10),
-                height: 60,
-                width: 60,
+                height: 77,
+                width: 77,
                 decoration: BoxDecoration(
-                  color:index.isEven? Colors.purple:Colors.red,
+                  border: Border.all(
+                    color: Colors.yellow,
+                    width: 8
+                  ),
+                  color:Colors.brown,
+
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child:Column(
@@ -64,6 +69,7 @@ void animation(){
               ),
             ),
             CustomButton(
+              value:currentValue,
               title: 'Roll Dice',
               onTap: () {
                 int randomNumber;
@@ -91,32 +97,82 @@ void animation(){
         ),
       );
     }else if(currentValue==2){
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: List.generate(2, (index){
-          return Container(
-            height: 10,
-            width: 10,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
-          );
-        })
-      );
-    }else if(currentValue==3){
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(3, (index){
-            return Container(
+      return Column(
+        children: [
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
               height: 10,
               width: 10,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
-            );
-          })
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              height: 10,
+              width: 10,
+              decoration: const BoxDecoration(
+                color: Colors.transparent,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              height: 10,
+              width: 10,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+
+        ],
+      );
+    }else if(currentValue==3){
+      return Column(
+        children: [
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              height: 10,
+              width: 10,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              height: 10,
+              width: 10,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              height: 10,
+              width: 10,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+
+        ],
       );
     }
     else if(currentValue==4){

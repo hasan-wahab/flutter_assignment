@@ -94,19 +94,18 @@ List <String> sensor=[
                   physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemBuilder: (context,index){
-
                     return  Padding(
                       padding: const EdgeInsets.only(top: 10),
                       child: Column(
                         children: [
                           ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.refresh,
                               size: 30,
                             ),
                             title: Text(
                                sensor[index],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 18),
                             ),
                             subtitle: Text(
@@ -123,7 +122,6 @@ List <String> sensor=[
                                 setState(() {
                                   isChecked[index]=value;
                                 });
-
                               },
                             ),
 
