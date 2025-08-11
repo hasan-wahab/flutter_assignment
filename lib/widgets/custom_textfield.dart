@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomTextfield extends StatelessWidget {
   late String hintText;
   late String lableText;
+  late int? maxLine;
 
   TextEditingController controller = TextEditingController();
 
@@ -11,6 +12,7 @@ class CustomTextfield extends StatelessWidget {
     this.hintText = 'Enter your marks',
     required this.lableText,
     required this.controller,
+    this.maxLine,
   });
 
   @override
@@ -18,15 +20,15 @@ class CustomTextfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 3),
       child: TextField(
-        onChanged: (value) {
-          var value2 = int.parse(value);
-          if (value2 > 100) {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                content: Text('Please enter a number less than 100.')));
-          }
-        },
+        // onChanged: (value) {
+        //   var value2 = int.parse(value);
+        //   // if (value2 > 100) {
+        //   //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        //   //       content: Text('Please enter a number less than 100.')));
+        //   // }
+        // },
         keyboardType: TextInputType.number,
-        maxLength: 3,
+        maxLength: maxLine,
         controller: controller,
         decoration: InputDecoration(
           label: Text(lableText),
