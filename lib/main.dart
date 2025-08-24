@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_project/damas_wrap_widget_assign.dart';
-import 'package:flutter_assignment_project/dmc_assignment.dart';
+
+import 'shared_pref_demo_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const DamasWrapWidgetAssign(),
+      home: const SharedPrefDemoScreen(),
     );
   }
 }
