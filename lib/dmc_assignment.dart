@@ -63,7 +63,7 @@ class _DmcAssignmentState extends State<DmcAssignment> {
             ),
             Row(
               children: [
-                CustomButton(
+                CustomButton1(
                   width: 160,
                   title: 'Clear',
                   onTap: () {
@@ -76,7 +76,7 @@ class _DmcAssignmentState extends State<DmcAssignment> {
                   },
                 ),
                 const Spacer(),
-                CustomButton(
+                CustomButton1(
                   width: 160,
                   title: 'Calculate',
                   onTap: () {

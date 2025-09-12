@@ -68,7 +68,7 @@ void animation(){
               
               ),
             ),
-            CustomButton(
+            CustomButton1(
               value:currentValue,
               title: 'Roll Dice',
               onTap: () {

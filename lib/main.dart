@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'shared_pref_demo_screen.dart';
+import 'package:flutter_assignment_project/ui/add_user.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const SharedPrefDemoScreen(),
+      home: AddUser(),
     );
   }
 }
