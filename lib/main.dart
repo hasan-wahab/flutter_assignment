@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment_project/abstract_providers/student_screen.dart';
+import 'package:flutter_assignment_project/switch_assignment.dart';
 
+import 'gridview_builder_assignment.dart';
 import 'shared_pref_demo_screen.dart';
 
 void main() {
@@ -9,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const SharedPrefDemoScreen(),
+      home:  const StudentScreen(),
     );
   }
 }
