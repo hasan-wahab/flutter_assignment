@@ -32,7 +32,7 @@ class _ConfetiPackageState extends State<ConfetiPackage> {
             shouldLoop: true,
           confettiController: confettiController,
         ),
-            CustomButton(
+            CustomButton1(
               title: 'Start',
               onTap: (){
             confettiController.play();

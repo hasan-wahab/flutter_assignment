@@ -75,7 +75,7 @@ class _DamasWrapWidgetAssignState extends State<DamasWrapWidgetAssign> {
               runSpacing: 20,
               spacing: 20,
               children: [
-                CustomButton(
+                CustomButton1(
                   title: '+',
                   onTap: () {
                     if(firstC.text.isEmpty||secondC.text.isEmpty){
@@ -92,7 +92,7 @@ class _DamasWrapWidgetAssignState extends State<DamasWrapWidgetAssign> {
                   },
                   width: 90,
                 ),
-                CustomButton(
+                CustomButton1(
                   title: '-',
                   onTap: () {
                     if(firstC.text.isEmpty||secondC.text.isEmpty){
@@ -108,7 +108,7 @@ class _DamasWrapWidgetAssignState extends State<DamasWrapWidgetAssign> {
                   },
                   width: 90,
                 ),
-                CustomButton(
+                CustomButton1(
                   title: '*',
                   onTap: () {
                     if(firstC.text.isEmpty||secondC.text.isEmpty){
@@ -124,7 +124,7 @@ class _DamasWrapWidgetAssignState extends State<DamasWrapWidgetAssign> {
                   },
                   width: 90,
                 ),
-                CustomButton(
+                CustomButton1(
                   title: '/',
                   onTap: () {
                     if(firstC.text.isEmpty||secondC.text.isEmpty){
@@ -142,7 +142,7 @@ class _DamasWrapWidgetAssignState extends State<DamasWrapWidgetAssign> {
                   },
                   width: 90,
                 ),
-                CustomButton(
+                CustomButton1(
                   title: 'Clear',
                   onTap: () {
 
@@ -156,6 +156,7 @@ class _DamasWrapWidgetAssignState extends State<DamasWrapWidgetAssign> {
                   },
                   width: 90,
                 ),
+              //  ElevatedButton.icon(onPressed: onPressed, label: label)
               ],
             )
           ]),

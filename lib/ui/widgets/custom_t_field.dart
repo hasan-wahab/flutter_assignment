@@ -11,9 +11,7 @@ class CustomTField extends StatelessWidget {
     required this.validator,
     required this.hintText,
     required this.lableText,
-
-    this.initialValue,
-
+     this.initialValue,
   });
 
   @override

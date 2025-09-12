@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_project/student_crud_opration/student_model.dart';
+
+
+import '../data_modle/student_modle.dart' show StudentModel;
+import '../db/db_helper.dart';
+import '../student_crud_opration/mixin_class _data.dart';
+import '../ui/widgets/custom_t_field.dart';
 import '../ui/widgets/custon_button.dart';
-import '../widgets/custom_button.dart';
-import '../widgets/custom_t_field.dart';
-import 'data_helper.dart';
-import 'mixin_class _data.dart';
 class StudentScreen extends StatefulWidget {
   const StudentScreen({super.key});
 
   @override
   State<StudentScreen> createState() => _StudentScreenState();
-
+  
 }
 
 class _StudentScreenState extends State<StudentScreen> with MixinStudentBase {
@@ -26,7 +27,7 @@ class _StudentScreenState extends State<StudentScreen> with MixinStudentBase {
           padding: const EdgeInsets.all(20.0),
           child: ListView(
             children: [
-
+              
               CustomTField(
                 validator: (value) {
                   if (value!.isEmpty || value == '') {
@@ -66,19 +67,16 @@ class _StudentScreenState extends State<StudentScreen> with MixinStudentBase {
               CustomButton(
                 onTap: () async{
                   if(formKey.currentState!.validate()){
-                    StudentModel student = StudentModel(
-                      name: name,
-                      title: title,
-                      description: desc,
-                      imageUrl:imageUrl ,
+                    StudentModel student = StudentModel(name: name, course: course, totalFee: null, feePaid: null, mobile: ''
+
                     );
                     DbHelper db = DbHelper.instance;
-                    final result= await db.saveStudent(student);
-                    if(result>0){
-                      showMsg(context, 'Record Saved');
-                    }else{
-                      showMsg(context, 'Record Failed');
-                    }
+                   final result= await db.saveStudent(student);
+                   if(result>0){
+                     showMsg(context, 'Record Saved');
+                   }else{
+                     showMsg(context, 'Record Failed');
+                   }
                   }else{
                     showMsg(context, 'Please enter required fields');
                   }

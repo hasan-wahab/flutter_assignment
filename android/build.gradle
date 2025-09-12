@@ -1,5 +1,9 @@
 buildscript {
+<<<<<<< HEAD
     ext.kotlin_version = "2.1.0"   // ✅ latest stable Kotlin version
+=======
+    ext.kotlin_version = '2.2.0'
+>>>>>>> 4614200909965dee89c729f6d4cad016e1757976
 
     repositories {
         google()

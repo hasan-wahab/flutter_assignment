@@ -103,7 +103,7 @@ class _SpinKitWidgetState extends State<SpinKitWidget> {
 
         // ]
 
-      )
+       )
 
     );
 
