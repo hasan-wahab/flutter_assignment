@@ -4,7 +4,6 @@ import 'package:flutter_assignment_project/abstraction_provider/student_model.da
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-
 import 'abstract_class_data.dart';
 
 class DbHelper extends StudentBase {
