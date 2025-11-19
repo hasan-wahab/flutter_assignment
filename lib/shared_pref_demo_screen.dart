@@ -17,7 +17,7 @@ class _SharedPrefDemoScreenState extends State<SharedPrefDemoScreen> {
     super.initState();
   }
 
-  getValue() async {
+  Future<void> getValue() async {
     var prefs = await SharedPreferences.getInstance();
     count = prefs.getInt('Counter') ?? 0;
     setState(() {});

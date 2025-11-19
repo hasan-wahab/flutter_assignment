@@ -1,11 +1,11 @@
-class StudentModel {
+class StudentDataModel {
   final int? id;
   final String title;
   final String name;
   final String description;
   final String imageUrl;
   // Constructor
-  StudentModel({
+  StudentDataModel({
     this.id,
     required this.name,
     required this.title,
@@ -27,10 +27,10 @@ class StudentModel {
 
   // Convert map to object
 
-  factory StudentModel.fromMap(Map<String, dynamic> map) {
-    return StudentModel(
+  factory StudentDataModel.fromMap(Map<String, dynamic> map) {
+    return StudentDataModel(
       id: map['id'],
-      title: 'title',
+      title: map['title'],
       name: map['name'],
       description: map['description'],
       imageUrl: map['imageUrl'],

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_project/switch_assignment.dart';
+import 'package:flutter_assignment_project/abstraction_provider/student_get.dart';
+import 'package:flutter_assignment_project/api_request/api_assignment.dart';
+import 'package:flutter_assignment_project/google_map.dart';
 
-import 'abstraction_provider/student_screen.dart';
-import 'gridview_builder_assignment.dart';
-import 'shared_pref_demo_screen.dart';
+import 'gallery_image_convert_to_base64.dart';
 
-import 'package:flutter_assignment_project/ui/add_user.dart';
 
 
 void main() {
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      home:  const StudentScreen(),
+      home:   GoogleMapScreen(),
 
 
 

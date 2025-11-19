@@ -1,10 +1,12 @@
 
-import '../data_modle/student_modle.dart';
+import 'package:flutter_assignment_project/abstraction_provider/student_model.dart';
+
+
 
 abstract class StudentBase{
 
-  saveStudent(StudentModel s);
-  getStudent();
-  deleteStudent(int id);
-  updateStudent(StudentModel s);
+  Future<int>saveStudent(StudentDataModel s);
+  Future<List>getStudent();
+  Future<int> deleteStudent(int id);
+  Future<int> updateStudent(StudentDataModel s);
 }

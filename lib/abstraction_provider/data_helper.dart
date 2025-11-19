@@ -1,12 +1,11 @@
 import 'dart:io';
 
-import 'package:flutter_assignment_project/student_crud_opration/student_model.dart';
+import 'package:flutter_assignment_project/abstraction_provider/student_model.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-import '../data_modle/student_modle.dart' hide StudentModel;
-import '../student_crud_opration/abstract_class_data.dart';
+import 'abstract_class_data.dart';
 
 class DbHelper extends StudentBase {
   DbHelper._();
@@ -36,7 +35,7 @@ class DbHelper extends StudentBase {
   _onCreate(Database db, int version)async {
     await db.execute('''Create TABLE $studentTableName(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT,
+  name TEXT UNIQUE,
   title TEXT,
   description TEXT,
   imageUrl TEXT
@@ -45,7 +44,7 @@ class DbHelper extends StudentBase {
 
   //Save student
   @override
-  Future<int> saveStudent(StudentModel s) async {
+  Future<int> saveStudent(StudentDataModel s) async {
     Database db =  await  database;
     int result =await  db.insert(studentTableName, s.toMap());
     return await result;
@@ -71,7 +70,7 @@ class DbHelper extends StudentBase {
     final record = await db.query(studentTableName);
     final List list = [];
     for (var map in record) {
-      StudentModel student = StudentModel.fromMap(map);
+      StudentDataModel student = StudentDataModel.fromMap(map);
       list.add(student);
     }
     await Future.delayed(Duration(seconds: 2));
@@ -82,16 +81,16 @@ class DbHelper extends StudentBase {
 
   // Update student
   @override
-  Future<int> updateStudent(StudentModel s) async {
+  Future<int> updateStudent(StudentDataModel s) async {
     Database db = await database;
 
-    final result = await db.update(
+    final result =  db.update(
       studentTableName,
       s.toMap(),
       where: 'id=?',
       whereArgs: [s.id],
     );
 
-    return result;
+    return await result;
   }
 }
